@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h1>Welcome to Zomato</h1>
+
+  <h2>{{ restaurant.name }}</h2>
+
+  <p>
+    {{ restaurant.address }}
+  </p>
+
+  {% if restaurant.veg_only %}
+    green
+  {% else %}
+    red
+  {% endif %}
+
+  <h4>Reviews</h4>
+
+  <ul>
+    {% for review in restaurant.review_set.all %}
+      <li>{{ review.title }}</li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}

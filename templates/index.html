@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h1>Welcome to Zomato</h1>
+
+  <ul>
+    {% for restaurant in restaurant_list %}
+      <li>
+        <a href="{% url 'restaurant' restaurant.id %}">
+          {{ restaurant }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}
